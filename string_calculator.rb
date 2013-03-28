@@ -2,9 +2,13 @@ class StringCalculator
   def add(numbers)
     result = 0
 
-    splittedNumbers = numbers.split(',')
-    splittedNumbers.each do |number|
-      result += number.to_i
+    splittedCommaNumbers = numbers.split(',')
+
+    splittedCommaNumbers.each do |number|
+      splittedNewlineNumbers = number.split("\n")
+      splittedNewlineNumbers.each do |newlineNumber|
+        result += newlineNumber.to_i
+      end
     end
 
     result
